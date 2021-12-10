@@ -63,4 +63,19 @@ class Post
 
     }
 
-     }
+    public static function findorfail ($slug)
+    {
+
+        $post = static::find($slug);
+
+        if (!$post) {
+
+            throw new ModelNotFoundException();
+
+        }
+
+        return $post;
+    }
+
+
+}
