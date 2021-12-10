@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/app.css">
+@extends('layout')
 
-    <title>Laravel Project Blogs</title>
+@section('content')
+    <article>
+        <h1>{{ $post->title }}</h1>
 
-</head>
+        <div>
+            {!! $post->body !!}
+        </div>
 
-<body>
-<article>
-<h1><?= $post->title; ?></h1>
+    </article>
 
-<div>
-    <?= $post->body; ?>
-</div>
+    <a href="/">Go Home</a>
 
-</article>
 
-<a href="/">Go Home</a>
-</body>
-
-</html>
+@endsection
